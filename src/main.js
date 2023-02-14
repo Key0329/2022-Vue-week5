@@ -30,7 +30,7 @@ Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule]);
 });
 
-loadLocaleFromURL('../src/assets/zh_TW.json');
+loadLocaleFromURL('../public/zh_TW.json');
 
 configure({
   generateMessage: localize('zh_TW'),
