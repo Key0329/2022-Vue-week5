@@ -62,6 +62,7 @@ export default {
         .then(() => {
           this.getCartsData();
           this.$refs.userProductModal.closeModal();
+          this.$refs.userProductModal.qty = 1;
           this.loadingItem = '';
           alert('已加入購物車');
         })
@@ -143,7 +144,9 @@ export default {
     },
     isPhone(value) {
       const phoneNumber = /^(09)[0-9]{8}$/;
-      return phoneNumber.test(value) ? true : '請填入正確的手機號碼';
+      return phoneNumber.test(value)
+        ? true
+        : '請填入 09 為開頭的十位數手機號碼';
     },
   },
   mounted() {
@@ -310,7 +313,7 @@ export default {
       </div>
     </div>
     <!-- 表單 -->
-    <div class="my-5 row justify-content-center">
+    <div class="my-5 row justify-content-center text-start">
       <v-form
         ref="form"
         class="col-md-6"
