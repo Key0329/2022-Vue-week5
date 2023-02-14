@@ -30,7 +30,9 @@ Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule]);
 });
 
-loadLocaleFromURL('./zh_TW.json');
+loadLocaleFromURL(
+  'https://github.com/Key0329/2022-Vue-week5/blob/main/zh_TW.json'
+);
 
 configure({
   generateMessage: localize('zh_TW'),
