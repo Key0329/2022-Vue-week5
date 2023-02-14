@@ -1,12 +1,10 @@
 <script>
 import Modal from 'bootstrap/js/dist/modal';
 
-const { VITE_URL, VITE_PATH } = import.meta.env;
-
 export default {
   props: {
-    tempProductId: {
-      type: String,
+    tempProduct: {
+      type: Object,
       required: true,
     },
     addToCart: {
@@ -16,22 +14,8 @@ export default {
   data() {
     return {
       modal: {},
-      product: {},
       qty: 1,
     };
-  },
-  watch: {
-    tempProductId() {
-      this.$http
-        .get(`${VITE_URL}/api/${VITE_PATH}/product/${this.tempProductId}`)
-        .then((res) => {
-          this.product = res.data.product;
-          this.openModal();
-        })
-        .catch((err) => {
-          alert(err.response.data.message);
-        });
-    },
   },
   methods: {
     openModal() {

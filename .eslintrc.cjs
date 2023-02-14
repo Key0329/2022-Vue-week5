@@ -32,6 +32,7 @@ module.exports = {
       'vite',
       '@vitejs/plugin-vue',
       '@rushstack/eslint-patch/modern-module-resolution',
+      'vue-loading-overlay',
     ],
   },
 };
